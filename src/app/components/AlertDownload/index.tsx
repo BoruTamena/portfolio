@@ -11,9 +11,9 @@ const translation = {
         descriptionCV: "The CV is being downloaded...",
         
     },
-    pt: {
-        download: "Download iniciado",
-        descriptionCV: "O Curriculo está sendo baixado...",
+    am: {
+        download: "የማውረድ ሂደት ጀምሯል",
+        descriptionCV: "ሲቪ እየተሸጠ ነው...",
     }
 }
 
@@ -27,10 +27,10 @@ const AlertDownload = () => {
             exit={{ opacity: 0, x: 100 }}
             transition={{ duration: 0.4, ease: "easeOut" }}
         >
-            <Alert className="bg-gray-900 border-blue-500 shadow-lg">
-                <CheckCircle className="h-4 w-4 !text-blue-500" />
-                <AlertTitle className="text-gray-400">{translation[language].download}</AlertTitle>
-                <AlertDescription className="text-gray-400">{translation[language].descriptionCV}</AlertDescription>
+            <Alert className="bg-[#0f1a0f] border-[#2d3a2d] shadow-lg">
+                <CheckCircle className="h-4 w-4 !text-[#22c55e]" />
+                <AlertTitle className="text-[#e4f5e4]">{translation[language].download}</AlertTitle>
+                <AlertDescription className="text-[#9db89d]">{translation[language].descriptionCV}</AlertDescription>
             </Alert>
         </motion.div>
     );

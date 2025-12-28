@@ -13,11 +13,11 @@ const translation = {
         worked: "I've already worked",
         studying: "I am studying",
     },
-    pt: {
-        Stack: "Tecnologias",
-        currently: "Trabalhando Atualmente",
-        worked: "Já trabalhei",
-        studying: "Estou Estudando",
+    am: {
+        Stack: "ቴክኖሎጂዎች",
+        currently: "አሁን እየሰራሁ",
+        worked: "አስቀድሜ ሰርቻለሁ",
+        studying: "እየተማርኩ ነው",
     },
 };
 
@@ -25,12 +25,12 @@ export function Stack() {
     const { language } = useLanguage();
 
     return (
-        <section id="stack" className="bg-gray-900 min-h-screen pt-14">
+        <section id="stack" className="bg-[#0a0f0a] min-h-screen pt-14">
             <div className="px-4 md:px-0 max-w-screen-xl lg:max-w-[70rem] xl:max-w-[76rem] 2xl:max-w-[92rem] py-8 mx-auto min-h-fit">
                 <div className="text-center">
-                    <h2 className="text-3xl font-bold text-white relative inline-block">
+                    <h2 className="text-3xl font-bold text-[#e4f5e4] relative inline-block">
                         {translation[language].Stack}
-                        <span className="block w-24 h-1 bg-blue-500 mt-2 mx-auto rounded-full"></span>
+                        <span className="block w-24 h-1 bg-[#22c55e] mt-2 mx-auto rounded-full"></span>
                     </h2>
                 </div>
                 <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-8">

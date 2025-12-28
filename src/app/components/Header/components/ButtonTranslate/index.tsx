@@ -6,7 +6,7 @@ import Image, { StaticImageData } from "next/image";
 interface ButtonTranslateProps {
     title: string,
     languageDefault: Language,
-    src: StaticImageData,
+    src?: StaticImageData,
 }
 
 export function ButtonTranslate({ title, languageDefault, src }: ButtonTranslateProps) {
@@ -15,18 +15,25 @@ export function ButtonTranslate({ title, languageDefault, src }: ButtonTranslate
     return (
         <button
             title={title}
-            aria-label={`Mudar idioma para ${title}`}
-            className="px-2 py-2"
-            onClick={() => setLanguage(languageDefault)
-            }
+            aria-label={`Switch language to ${title}`}
+            className={`px-3 py-2 rounded-md transition-all duration-200 ${
+                language === languageDefault 
+                    ? "bg-[#1a2a1a] text-[#22c55e] border border-[#22c55e]" 
+                    : "text-[#e4f5e4] hover:bg-[#1a2a1a] hover:text-[#22c55e]"
+            }`}
+            onClick={() => setLanguage(languageDefault)}
         >
-            <Image
-                src={src}
-                alt="Usa Flag"
-                className={`${language === languageDefault ? "opacity-50" : "opacity-100"} w-8 h-8 rounded-full`}
-                width={28}
-                height={28}
-            />
+            {src ? (
+                <Image
+                    src={src}
+                    alt={title}
+                    className="w-8 h-8 rounded-full"
+                    width={28}
+                    height={28}
+                />
+            ) : (
+                <span className="text-sm font-medium">{title}</span>
+            )}
         </button>
     );
 }

@@ -1,10 +1,11 @@
 import Image, { StaticImageData } from "next/image";
 import { IconType } from "react-icons";
-import { IoCloseCircle } from "react-icons/io5";
+import { X } from "lucide-react";
 import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 import { useLanguage } from "@/app/providers/LanguageContext";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const translation = {
     en: {
@@ -12,10 +13,10 @@ const translation = {
         buttonGithub: "Access Repository",
         close: "Close"
     },
-    pt: {
-        checkPost: "Verificar Post",
-        buttonGithub: "Acessar Repositorio",
-        close: "Fechar"
+    am: {
+        checkPost: "ፖስት ይፈትሹ",
+        buttonGithub: "ማከማቻ ይድረሱ",
+        close: "ዝጋ"
     }
 }
 
@@ -67,60 +68,117 @@ export default function ModalCard({ isOpen, onClose, title, src, description, st
             window.removeEventListener("mousedown", handleClickOutside);
         };
     }, [isOpen, onClose]);
-    if (!mounted) return null; // Impede renderização no servidor (SSG/SSR)
+    if (!mounted) return null;
 
     return (
-        <div className={`fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 p-4 
-            ${isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'} 
-            transition-all duration-300 ease-in-out`}>
-            <div className={`bg-white p-8 rounded-lg shadow-lg max-w-6xl xl:max-w-7xl w-full max-h-[90vh] overflow-y-auto relative 
-                ${isOpen ? 'transform scale-100' : 'transform scale-90'} 
-                transition-all duration-300 ease-in-out`}>
-
-                <button onClick={onClose} className="absolute top-5 right-3 hover:text-gray-500 text-red-700" aria-label={translation[language].close}>
-                    <IoCloseCircle size={34} />
-                </button>
-
-                <div className="flex flex-col md:flex-row items-center md:items-center gap-5">
-
-                    <div className="flex flex-col items-center">
-
-                        <Image src={src} width={500} height={400} alt={title} className="rounded-md max-w-full" />
-                        <div className="flex gap-7 mt-10 justify-center w-full">
-
-                            <Link href={repository}
-                                target="_blank" className="flex border-blue-500 bg-white text-blue-500  items-center justify-center w-1/2 rounded-md border-2 py-2 px-2 gap-2 transition-all duration-300 hover:scale-105 hover:bg-blue-500 hover:text-white">
-                                <FaGithub size={18} />
-                                {translation[language].buttonGithub}
-                            </Link>
-                            {
-                                post && (
-                                    <Link href={post}
-                                        target="_blank" className="flex border-blue-500 bg-white text-blue-500  items-center justify-center w-1/2 rounded-md border-2 py-2 px-2 gap-2 transition-all duration-300 hover:scale-105 hover:bg-blue-500 hover:text-white">
-                                        <FaExternalLinkAlt size={16} />
-                                        {translation[language].checkPost}
-                                    </Link>
-                                )
-                            }
+        <AnimatePresence>
+            {isOpen && (
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    className="fixed inset-0 flex items-center justify-center bg-black/80 backdrop-blur-sm z-50 p-4"
+                    onClick={onClose}
+                >
+                    <motion.div
+                        id="modal-container"
+                        initial={{ opacity: 0, scale: 0.9, y: 20 }}
+                        animate={{ opacity: 1, scale: 1, y: 0 }}
+                        exit={{ opacity: 0, scale: 0.9, y: 20 }}
+                        transition={{ duration: 0.3, ease: "easeOut" }}
+                        onClick={(e) => e.stopPropagation()}
+                        className="bg-[#0f1a0f] border border-[#2d3a2d] rounded-xl shadow-2xl max-w-6xl w-full max-h-[90vh] overflow-hidden relative flex flex-col"
+                    >
+                        {/* Header */}
+                        <div className="flex items-center justify-between p-6 border-b border-[#2d3a2d] bg-[#1a2a1a]/50">
+                            <h2 className="text-2xl md:text-3xl font-bold text-[#e4f5e4]">{title}</h2>
+                            <button
+                                onClick={onClose}
+                                className="p-2 hover:bg-[#2d3a2d] rounded-lg transition-colors text-[#9db89d] hover:text-[#e4f5e4]"
+                                aria-label={translation[language].close}
+                            >
+                                <X size={24} />
+                            </button>
                         </div>
-                    </div>
 
-                    <div className="flex flex-col pl-5 max-w-full md:max-w-2xl">
-                        <h1 className="text-xl font-semibold pb-3 text-gray-800 md:text-xl xl:text-2xl">{title}</h1>
-                        <p className="text-gray-500 text-base break-words whitespace-pre-line xl:text-xl">
-                            {description}
-                        </p>
-                        <div className="flex items-center gap-2 mt-2 text-gray-300 py-2">
+                        {/* Content */}
+                        <div className="overflow-y-auto flex-1">
+                            <div className="flex flex-col gap-6 p-6">
+                                {/* Image Section */}
+                                <div className="w-full">
+                                    <div className="relative rounded-lg overflow-hidden border border-[#2d3a2d] bg-[#1a2a1a]">
+                                        <Image
+                                            src={src}
+                                            width={800}
+                                            height={450}
+                                            alt={title}
+                                            className="w-full h-auto object-cover"
+                                        />
+                                    </div>
+                                </div>
 
-                            {
-                                stack.map((Icon, i) => (
-                                    <Icon key={i} size={24} className="text-blue-500" />
-                                ))
-                            }
+                                {/* Technology Stack */}
+                                <div className="bg-[#1a2a1a] border border-[#2d3a2d] rounded-lg p-4">
+                                    <h3 className="text-sm font-semibold text-[#9db89d] uppercase tracking-wide mb-3">
+                                        {language === "en" ? "Technologies" : "ቴክኖሎጂዎች"}
+                                    </h3>
+                                    <div className="flex flex-wrap gap-3">
+                                        {stack.map((Icon, i) => (
+                                            <div
+                                                key={i}
+                                                className="flex items-center justify-center w-12 h-12 bg-[#0f1a0f] border border-[#2d3a2d] rounded-lg hover:border-[#22c55e] transition-colors"
+                                                title={Icon.name || `Tech ${i + 1}`}
+                                            >
+                                                <Icon size={24} className="text-[#22c55e]" />
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
+
+                                {/* Description Section */}
+                                <div className="space-y-4">
+                                    <div>
+                                        <h3 className="text-lg font-semibold text-[#e4f5e4] mb-3">
+                                            {language === "en" ? "About This Project" : "ስለ ይህ ፕሮጀክት"}
+                                        </h3>
+                                        <div className="prose prose-invert max-w-none">
+                                            <p className="text-[#9db89d] text-base leading-relaxed whitespace-pre-line">
+                                                {description}
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    {/* Action Buttons */}
+                                    <div className="flex flex-col sm:flex-row gap-3 pt-4 border-t border-[#2d3a2d]">
+                                        {repository && repository.trim() !== "" && (
+                                            <Link
+                                                href={repository}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-[#1a2a1a] border border-[#2d3a2d] text-[#e4f5e4] rounded-lg font-medium hover:bg-[#2d3a2d] hover:border-[#22c55e] transition-all duration-300 group"
+                                            >
+                                                <FaGithub size={18} className="group-hover:scale-110 transition-transform" />
+                                                <span>{translation[language].buttonGithub}</span>
+                                            </Link>
+                                        )}
+                                        {post && post.trim() !== "" && (
+                                            <Link
+                                                href={post}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className={`flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-gradient-to-r from-[#22c55e] to-[#10b981] text-white rounded-lg font-medium hover:from-[#16a34a] hover:to-[#059669] transition-all duration-300 shadow-lg shadow-[#22c55e]/20 group ${!repository || repository.trim() === "" ? 'w-full' : ''}`}
+                                            >
+                                                <FaExternalLinkAlt size={16} className="group-hover:scale-110 transition-transform" />
+                                                <span>{translation[language].checkPost}</span>
+                                            </Link>
+                                        )}
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+                    </motion.div>
+                </motion.div>
+            )}
+        </AnimatePresence>
     );
 }

@@ -5,23 +5,22 @@ import "./globals.css";
 const imageUrl = "https://www.devsamuelbrito.com.br/portifolio.png";
 
 export const metadata: Metadata = {
-  title: "Portifolio | Samuel Brito",
-  description: "Portfólio de Samuel, desenvolvedor full-stack, com foco em Next.js, TypeScript, Tailwind CSS, Node.js, Prisma e PostgreSQL.",
+  title: "Portfolio | Boru Tamene",
+  description: "Portfolio of Boru Tamene, Compute Engineer specializing in cloud computing, distributed systems, and software engineering.",
   keywords: [
-    "Samuel", "Samuel Fava de Brito", "DevSamuelBrito", "Dev Samuel Fava de Brito", "desenvolvedor", "portfólio", "Next.js", "TypeScript", "React", "JavaScript", "Tailwind CSS", "Node.js", "Prisma", "PostgreSQL",
-    "front-end", "back-end", "full-stack", "programador", "desenvolvimento web", "developer", "portfolio", "web developer", "software engineer", "coding",
-    "React developer", "JavaScript developer", "TypeScript expert", "frontend engineer",
-    "backend engineer", "full-stack developer", "web programming", "software development",
-    "hire developer", "remote developer", "Brazilian developer", "tech professional",
+    "Boru Tamene", "Compute Engineer", "Cloud Computing", "Distributed Systems", "Software Engineering", "portfolio", "Next.js", "TypeScript", "React", "JavaScript", "Tailwind CSS", "Node.js",
+    "engineer", "developer", "portfolio", "compute engineer", "software engineer", "coding",
+    "cloud engineer", "systems engineer", "backend engineer", "full-stack developer", "web programming", "software development",
+    "hire engineer", "remote engineer", "tech professional",
     "code portfolio", "web solutions", "modern web apps", "React applications",
     "responsive websites", "web services", "API specialist", "UI developer"
   ],
 
   openGraph: {
-    title: "Samuel | Desenvolvedor Full-Stack",
-    description: "Portfólio de Samuel, desenvolvedor full-stack. Conheça meus projetos e minha trajetória na área de tecnologia.",
+    title: "Boru Tamene | Compute Engineer",
+    description: "Portfolio of Boru Tamene, Compute Engineer. Explore my projects and journey in technology.",
     type: "website",
-    images: [{ url: imageUrl, width: 1200, height: 600, alt: "Samuel | Desenvolvedor Full-Stack" }],
+    images: [{ url: imageUrl, width: 1200, height: 600, alt: "Boru Tamene | Compute Engineer" }],
     url: "https://www.devsamuelbrito.com.br/"
   },
   robots: {
@@ -40,8 +39,8 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="pt-br">
-      <body>
+    <html lang="en" className="dark">
+      <body className="bg-[#0a0f0a]">
         <LanguageProvider>
           {children}
         </LanguageProvider>

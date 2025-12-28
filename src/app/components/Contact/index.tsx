@@ -13,19 +13,19 @@ const translations = {
         location: "Location",
         description2: "I love learning from new experiences and challenges. Whether it's to share ideas, ask for advice or discuss future projects, I'm here to help. Let's exchange ideas and explore new possibilities together!",
         description3: "Feel free to explore my repositories, contribute new features, connect with me on Linkedin, send me an email or even invite me for a virtual coffee.",
-        developer: "Developed by Samuel Brito",
-        rights: "© 2025 Samuel Brito. All rights reserved.",
+        developer: "Developed by Boru Tamene",
+        rights: "© 2025 Boru Tamene. All rights reserved.",
         title2: "Let's Connect"
     },
-    pt: {
-        title: "Contato",
-        description: "Estou sempre aberto a novas conexões e oportunidades. Se você tem alguma dúvida, gostaria de discutir uma ideia ou está em busca de uma parceria, ficarei feliz em conversar. Sinta-se à vontade para me mandar uma mensagem pelas minhas redes sociais abaixo, e farei o possível para responder rapidamente.",
-        location: "Localização",
-        description2: "Adoro aprender com novas experiências e desafios. Seja para compartilhar ideias, pedir conselhos ou discutir projetos futuros, estou à disposição. Vamos trocar ideias e explorar novas possibilidades juntos!",
-        description3: "Fique a Vontade para explorar meus repositorios, contribuir  com novas feautures, se conectar comigo no Linkedin, me mandar um email ou até mesmo me chamar para um café virtual.",
-        developer: "Desenvolvido por Samuel Brito",
-        rights: "© 2025 Samuel Brito. Todos os direitos reservado.",
-        title2: "Entre em contato comigo"
+    am: {
+        title: "እውቂያ",
+        description: "ለአዲስ ግንኙነቶች እና እድሎች ሁልጊዜ ክፍት ነኝ። ማንኛውም ጥያቄ ካለዎት፣ ሀሳብ ለመወያየት ከፈለጉ ወይም ባለንግድ ግንኙነት ከፈለጉ፣ ለመነጋገር ደስ ይለኛል። ከዚህ በታች ባሉት ማህበራዊ ሚዲያ ቻናሎቼ ላይ መልእክት ላኩልኝ፣ እና በተቻለ ፍጥነት ለመመለስ እሞክራለሁ።",
+        location: "አካባቢ",
+        description2: "ከአዲስ ልምዶች እና ስጋቶች መማርን እወዳለሁ። ሀሳቦችን ለመጋራት፣ ምክር ለመጠየቅ ወይም የወደፊት ፕሮጀክቶችን ለመወያየት ቢሆንም፣ እዚህ አለሁ ለመርዳት። ሀሳቦችን እንለዋወጥ እና አዲስ እድሎችን አንድ ላይ እንመርምር!",
+        description3: "የእኔን ማከማቻዎችን ለመመርመር፣ አዲስ ባህሪያትን ለመስጠት፣ በLinkedin ላይ ከእኔ ጋር ለመገናኘት፣ ኢሜይል ላኩልኝ ወይም ለምሳሌ ካፌ ለመጋበዝ ነፃነት ይሰማዎ።",
+        developer: "በቦሩ ታመኔ የተዘጋጀ",
+        rights: "© 2025 ቦሩ ታመኔ። ሁሉም መብቶች የተጠበቁ ናቸው።",
+        title2: "እንገናኝ"
 
     }
 }
@@ -33,20 +33,20 @@ const translations = {
 export function Contact() {
     const { language } = useLanguage();
     return (
-        <section id="contact" className="bg-gray-900 min-h-screen flex flex-col items-center pt-16 justify-between overflow-x-hidden">
+        <section id="contact" className="bg-[#0a0f0a] min-h-screen flex flex-col items-center pt-16 justify-between overflow-x-hidden">
             <div className="grid px-4 sm:px-6 md:px-0 max-w-screen-xl lg:max-w-[70rem] xl:max-w-[76rem] 2xl:max-w-[92rem] py-8 mx-auto lg:grid-cols-12 w-full">
                 <div className="lg:col-span-12 text-center">
-                    <p className="text-3xl font-bold text-white relative inline-block">
+                    <p className="text-3xl font-bold text-[#e4f5e4] relative inline-block">
                         {translations[language].title}
-                        <span className="block w-24 h-1 bg-blue-500 mt-2 mx-auto rounded-full"></span>
+                        <span className="block w-24 h-1 bg-[#22c55e] mt-2 mx-auto rounded-full"></span>
                     </p>
                     <div className="mt-5 my-auto">
-                        <p className="font-bold py-2 text-white text-xl 2xl:text-2xl">{translations[language].title2}</p>
-                        <p className="text-gray-400 py-2 px-4 sm:px-12 md:px-32 text-xl 2xl:pt-6">{translations[language].description}</p>
-                        <p className="text-gray-400 py-2 px-4 sm:px-12 md:px-32 text-xl 2xl:pt-6">
+                        <p className="font-bold py-2 text-[#e4f5e4] text-xl 2xl:text-2xl">{translations[language].title2}</p>
+                        <p className="text-[#9db89d] py-2 px-4 sm:px-12 md:px-32 text-xl 2xl:pt-6">{translations[language].description}</p>
+                        <p className="text-[#9db89d] py-2 px-4 sm:px-12 md:px-32 text-xl 2xl:pt-6">
                             {translations[language].description2}
                         </p>
-                        <p className="text-gray-400 py-2 px-4 sm:px-12 md:px-32 text-xl 2xl:pt-6">
+                        <p className="text-[#9db89d] py-2 px-4 sm:px-12 md:px-32 text-xl 2xl:pt-6">
                             {translations[language].description3}
                         </p>
 

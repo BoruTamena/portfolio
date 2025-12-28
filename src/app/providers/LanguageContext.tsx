@@ -1,8 +1,8 @@
 "use client";
 import { createContext, useState, useEffect, ReactNode, useContext } from "react";
 
-// Criando tipagem para provedor
-export type Language = "en" | "pt";
+// Creating type for provider
+export type Language = "en" | "am";
 
 interface LanguageContextProps {
   language: Language;
@@ -16,20 +16,32 @@ const LanguageContext = createContext<LanguageContextProps | undefined>(
 
 // Criando o Provider
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
-  const [language, setLanguage] = useState<Language>("pt");
+  const [language, setLanguage] = useState<Language>("en");
 
-  // Recupera a linguagem do localStorage ao carregar o site
+  // Retrieve language from localStorage on site load
   useEffect(() => {
     const savedLanguage = localStorage.getItem("language") as Language;
-    if (savedLanguage) {
+    // Validate that saved language is still supported (en or am)
+    if (savedLanguage && (savedLanguage === "en" || savedLanguage === "am")) {
       setLanguage(savedLanguage);
+    } else {
+      // If invalid language found, reset to default and clear localStorage
+      localStorage.removeItem("language");
+      setLanguage("en");
     }
   }, []);
 
-  // Salva a linguagem no localStorage quando for alterada
+  // Save language to localStorage when changed
   const changeLanguage = (lang: Language) => {
-    setLanguage(lang);
-    localStorage.setItem("language", lang);
+    // Validate language before setting
+    if (lang === "en" || lang === "am") {
+      setLanguage(lang);
+      localStorage.setItem("language", lang);
+    } else {
+      // If invalid language provided, default to English
+      setLanguage("en");
+      localStorage.setItem("language", "en");
+    }
   };
 
   return (

@@ -14,12 +14,12 @@ export function ContactIcon({ Icon, href, title }: ContactIconProps) {
             <Link
                 href={href}
                 target="_blank"
-                className="border-blue-500 border-2 rounded-full p-3 inline-flex items-center justify-center text-blue-500 font-bold
-            hover:bg-blue-500 hover:text-gray-900 transition-all duration-300 hover:scale-110"
+                className="border-[#2d3a2d] border-2 rounded-md p-3 inline-flex items-center justify-center text-[#e4f5e4] font-medium bg-[#0f1a0f]
+            hover:bg-[#1a2a1a] hover:border-[#22c55e] transition-all duration-300 hover:scale-110"
             >
                 <Icon size={36} />
             </Link>
-            <p className="text-white mt-2 ">{title}</p>
+            <p className="text-[#e4f5e4] mt-2 ">{title}</p>
         </div>
     )
 }

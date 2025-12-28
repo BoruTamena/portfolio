@@ -16,18 +16,18 @@ interface ServiceCardBackProps {
 }
 export function ServiceCard({ icon: Icon, title, description }: ServiceCardProps) {
     return (
-        <div className="bg-gray-800 h-full flex-grow p-6 rounded-lg shadow-lg flex flex-col items-center ">
+        <div className="bg-[#0f1a0f] border border-[#2d3a2d] h-full flex-grow p-6 rounded-lg shadow-lg flex flex-col items-center ">
             <div className="h-24 w-32 flex items-center justify-center  ">
-                <Icon size={60} className="text-blue-500 mt-2" />
+                <Icon size={60} className="text-[#22c55e] mt-2" />
 
             </div>
             <ul className="mt-2">
-                <li className="flex flex-col items-center text-white">
+                <li className="flex flex-col items-center text-[#e4f5e4]">
                     <div className="flex flex-col items-center">
-                        <p className="text-xl font-semibold text-white text-center">{title}</p>
-                        <span className="block w-24 h-1 bg-blue-500 mt-2 rounded-full"></span>
+                        <p className="text-xl font-semibold text-[#e4f5e4] text-center">{title}</p>
+                        <span className="block w-24 h-1 bg-[#22c55e] mt-2 rounded-full"></span>
                     </div>
-                    <p className="text-center px-4 mt-5 text-base 2xl:text-lg">
+                    <p className="text-center px-4 mt-5 text-base 2xl:text-lg text-[#9db89d]">
                         {description}
                     </p>
                 </li>
@@ -38,20 +38,20 @@ export function ServiceCard({ icon: Icon, title, description }: ServiceCardProps
 
 export function ServiceCardBack({ title, description }: ServiceCardBackProps) {
     return (
-        <div className="bg-gray-800 h-full flex-grow p-6 rounded-lg shadow-lg flex flex-col items-center ">
+        <div className="bg-[#0f1a0f] border border-[#2d3a2d] h-full flex-grow p-6 rounded-lg shadow-lg flex flex-col items-center ">
             <div className="flex gap-4 w-32 h-24 items-center justify-center">
-                <TbApi size={50} className="text-blue-500" />
-                <FaExchangeAlt size={30} className="text-blue-500" />
-                <FaDatabase size={40} className="text-blue-500" />
+                <TbApi size={50} className="text-[#22c55e]" />
+                <FaExchangeAlt size={30} className="text-[#22c55e]" />
+                <FaDatabase size={40} className="text-[#22c55e]" />
             </div>
 
             <ul className="mt-2">
-                <li className="flex flex-col items-center text-white">
+                <li className="flex flex-col items-center text-[#e4f5e4]">
                     <div className="flex flex-col items-center">
-                        <p className="text-xl font-semibold text-white text-center">{title}</p>
-                        <span className="block w-24 h-1 bg-blue-500 mt-2 rounded-full"></span>
+                        <p className="text-xl font-semibold text-[#e4f5e4] text-center">{title}</p>
+                        <span className="block w-24 h-1 bg-[#22c55e] mt-2 rounded-full"></span>
                     </div>
-                    <p className="text-center px-4 mt-5 text-base 2xl:text-lg">
+                    <p className="text-center px-4 mt-5 text-base 2xl:text-lg text-[#9db89d]">
                         {description}
                     </p>
                 </li>

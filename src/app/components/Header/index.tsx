@@ -2,7 +2,6 @@
 import { useState, useEffect } from "react";
 import { ButtonTranslate } from "./components/ButtonTranslate";
 import { Menu, X } from "lucide-react";
-import brasilFlag from "@/assets/images/BR-flag.png";
 import usaFlag from "@/assets/images/USA-flag.png";
 import { useLanguage } from "@/app/providers/LanguageContext";
 import { HeroItem, NavBarItem } from "./components/NavBarItem";
@@ -16,18 +15,21 @@ const translation = {
     stack: "Stack",
     contact: "Contact",
   },
-  pt: {
-    services: "Serviços",
-    about: "Sobre mim",
-    projects: "Projetos",
-    stack: "Tecnologias",
-    contact: "Contato",
+  am: {
+    services: "አገልግሎቶች",
+    about: "ስለእኔ",
+    projects: "ፕሮጀክቶች",
+    stack: "ቴክኖሎጂዎች",
+    contact: "እውቂያ",
   }
 }
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const { language } = useLanguage(); // aqui eu pego o contexto do idioma
+  const { language } = useLanguage();
+  
+  // Ensure we have a valid language, default to "en" if not
+  const currentLanguage = (language === "en" || language === "am") ? language : "en";
 
   const [activeSection, setActiveSection] = useState<string>("");
 
@@ -40,9 +42,9 @@ export const Navbar = () => {
           const link = document.querySelector(`a[href="#${entry.target.id}"]`);
           if (entry.isIntersecting) {
             setActiveSection(entry.target.id);
-            link?.classList.add("text-blue-700");
+            link?.classList.add("text-[#22c55e]");
           } else {
-            link?.classList.remove("text-blue-700");
+            link?.classList.remove("text-[#22c55e]");
           }
         });
       },
@@ -61,15 +63,15 @@ export const Navbar = () => {
     <motion.header initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
-      className="fixed top-0 w-full z-50 h-14 lg:h-auto shadow-lg">
-      <nav className="border-gray-200 px-4 lg:px-6 py-2.5 bg-[#13202e]">
+      className="fixed top-0 w-full z-50 h-14 lg:h-auto border-b border-[#2d3a2d]">
+      <nav className="px-4 lg:px-6 py-2.5 bg-[#0f1a0f]">
         <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl  lg:max-w-[70rem] xl:max-w-[76rem] 2xl:max-w-[92rem]">
 
           <HeroItem />
 
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden p-2 text-gray-500 rounded-lg focus:outline-none"
+            className="lg:hidden p-2 text-[#e4f5e4] hover:bg-[#1a2a1a] rounded-lg focus:outline-none transition-colors"
           >
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
@@ -80,16 +82,16 @@ export const Navbar = () => {
           >
             <ul className="flex flex-col lg:flex-row lg:space-x-8 mt-4 lg:mt-0 font-medium ">
 
-              <NavBarItem href="#about" id="about" label={translation[language].about} activeSection="about" setActiveSection={setActiveSection} />
-              <NavBarItem href="#projects" id="projects" label={translation[language].projects} activeSection="projects" setActiveSection={setActiveSection} />
-              <NavBarItem href="#stack" id="stack" label={translation[language].stack} activeSection="stack" setActiveSection={setActiveSection} />
-              <NavBarItem href="#services" id="services" label={translation[language].services} activeSection="services" setActiveSection={setActiveSection} />
-              <NavBarItem href="#contact" id="contact" label={translation[language].contact} activeSection="contact" setActiveSection={setActiveSection} />
+              <NavBarItem href="#about" id="about" label={translation[currentLanguage].about} activeSection="about" setActiveSection={setActiveSection} />
+              <NavBarItem href="#projects" id="projects" label={translation[currentLanguage].projects} activeSection="projects" setActiveSection={setActiveSection} />
+              <NavBarItem href="#stack" id="stack" label={translation[currentLanguage].stack} activeSection="stack" setActiveSection={setActiveSection} />
+              <NavBarItem href="#services" id="services" label={translation[currentLanguage].services} activeSection="services" setActiveSection={setActiveSection} />
+              <NavBarItem href="#contact" id="contact" label={translation[currentLanguage].contact} activeSection="contact" setActiveSection={setActiveSection} />
 
               {isOpen && (
                 <li className="flex flex-row  gap-2">
                   <ButtonTranslate languageDefault={"en"} src={usaFlag} title="Switch to English" />
-                  <ButtonTranslate languageDefault={"pt"} src={brasilFlag} title="Trocar para o Português" />
+                  <ButtonTranslate languageDefault={"am"} title="አማርኛ" />
                 </li>
               )}
             </ul>
@@ -98,7 +100,7 @@ export const Navbar = () => {
 
           <div className="hidden lg:flex items-center">
             <ButtonTranslate languageDefault={"en"} src={usaFlag} title="Switch to English" />
-            <ButtonTranslate languageDefault={"pt"} src={brasilFlag} title="Trocar para o Português" />
+            <ButtonTranslate languageDefault={"am"} title="አማርኛ" />
           </div>
 
         </div>

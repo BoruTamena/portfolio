@@ -4,7 +4,7 @@ import Image from "next/image";
 import img from "@/assets/images/iconHero.png";
 export function Photo() {
     return (
-        <div className="text-white w-7/12 h-full flex items-center justify-center">
+        <div className="text-[#e4f5e4] w-7/12 h-full flex items-center justify-center">
             <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1, transition: { delay: 0.3, duration: 0.5, ease: "easeIn" } }}
@@ -32,7 +32,7 @@ export function Photo() {
                         cy="253"
                         r="250"
                         fill="transparent"
-                        stroke="#3b82f6"
+                        stroke="#22c55e"
                         strokeWidth="4"
                         strokeLinecap={"round"}
                         strokeLinejoin={"round"}

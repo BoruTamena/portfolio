@@ -18,17 +18,17 @@ const translation = {
         descriptionBack: "I have experience developing APIs and scalable systems using Node.js and ASP.NET, always focusing on security, performance, and good architectural practices. I work with databases like PostgreSQL and Firebird, structuring applications that ensure integrity, efficient data flow, and easy maintenance. My goal is to deliver robust solutions that reliably connect the frontend to the backend, providing a solid foundation for any application.",
         descriptionTargets: "Currently, my focus is on seeking new challenges to grow as a programmer. I am committed to improving my knowledge, especially in back-end, learning new tools and improving my programming skills. In addition, I seek to learn from more experienced people and apply the knowledge acquired in agile methodologies, always with the goal of constantly evolving."
     },
-    pt: {
-        title: "Serviços",
-        question: "Como posso ajudar?",
-        anwser: "Embora eu ainda não esteja oferecendo serviços de forma formal, estou sempre pronto para colaborar em projetos desafiadores e aprender com novas experiências.",
-        anwser2: "Além do desenvolvimento web e back-end, também estou interessado em explorar áreas como DevOps, automação e melhores práticas para tornar aplicações mais eficientes e escaláveis.",
-        titleWeb: "Desenvolvimento Web",
+    am: {
+        title: "አገልግሎቶች",
+        question: "እንዴት ልረዳ?",
+        anwser: "ምንም እንኳን አገልግሎቶችን በይፋ እስካላቀረብኩ ቢሆንም፣ በግልጽ ስጋቶች ያላቸው ፕሮጀክቶች ላይ ለመተባበር እና ከአዲስ ልምዶች ለመማር ሁልጊዜ ዝግጁ ነኝ።",
+        anwser2: "ከድር እና back-end ልማት በተጨማሪ፣ እንደ DevOps፣ አውቶሜሽን እና መተግበሪያዎችን የበለጠ ውጤታማ እና ማስፋፊያ ለማድረግ ምርጥ ልምዶች ያሉ አካባቢዎችን ለመመርመር እፈልጋለሁ።",
+        titleWeb: "የድር ልማት",
         titleBack: "Back-End",
-        titleTargets: "Objetivos e Metas",
-        descriptionWeb: "Meu foco está em criar experiências web que resolvam problemas reais, combinando design responsivo com funcionalidades robustas. Acredito que um bom projeto web deve ser intuitivo, acessível e rápido. Cada projeto é uma oportunidade para aprender novas tecnologias, aprimorar minhas habilidades em React, Next.js e outras ferramentas essenciais, e me desafiar a entregar soluções mais eficientes e escaláveis.",
-        descriptionBack: "Tenho experiência no desenvolvimento de APIs e sistemas escaláveis utilizando Node.js e ASP.NET, sempre com foco em segurança, performance e boas práticas de arquitetura. Trabalho com bancos de dados como PostgreSQL e Firebird, estruturando aplicações que garantem integridade, eficiência no fluxo de dados e fácil manutenção. Meu objetivo é entregar soluções robustas que conectem de forma confiável o front-end ao back-end, proporcionando uma base sólida para qualquer aplicação.",
-        descriptionTargets: "Atualmente, meu foco é buscar novos desafios para crescer como programador. Estou empenhado em aprimorar meu conhecimento, principalmente em back-end, aprender novas ferramentas e melhorar minhas habilidades em programação. Além disso, busco aprender com pessoas mais experientes e aplicar os conhecimentos adquiridos em metodologias ágeis, sempre com o objetivo de evoluir constantemente."
+        titleTargets: "ግቦች እና ዓላማዎች",
+        descriptionWeb: "የእኔ ትኩረት እውነተኛ ችግሮችን የሚፈቱ የድር ልምዶችን በመፍጠር ላይ ነው፣ ምላሽ የሚሰጥ ዲዛይንን ከጠንካራ ተግባራዊነት ጋር በማጣመር። ጥሩ የድር ፕሮጀክት ምናልባታዊ፣ ተደራሽ እና ፈጣን መሆን አለበት ብዬ አምናለሁ። እያንዳንዱ ፕሮጀክት አዲስ ቴክኖሎጂዎችን ለመማር፣ በ React፣ Next.js እና ሌሎች አስፈላጊ መሳሪያዎች ላይ ክህሎቶቼን ለማሻሻል እና የበለጠ ውጤታማ እና ማስፋፊያ የሆኑ መፍትሄዎችን ለመስጠት እንድተጋ የሚያደርገኝ እድል ነው።",
+        descriptionBack: "Node.js እና ASP.NET በመጠቀም APIs እና ማስፋፊያ ስርዓቶችን በማዳበር ልምድ አለኝ፣ ሁልጊዜ በደህንነት፣ አፈጻጸም እና ጥሩ የስርዓት ስርዓት ልምዶች ላይ ትኩረት በማድረግ። እንደ PostgreSQL እና Firebird ያሉ የውሂብ ጎዳናዎች እሰራለሁ፣ የመጣርነት፣ ውጤታማ የውሂብ ፍሰት እና ቀላል ጥገናን የሚያረጋግጡ መተግበሪያዎችን በመዋቅር። የእኔ ግብ የፊት ጫፍን ከጀርባ ጫፍ ጋር በተመጣጣኝ ሁኔታ የሚያገናኝ ጠንካራ መፍትሄዎችን ማቅረብ ነው፣ ለማንኛውም መተግበሪያ ጠንካራ መሰረት ማቅረብ።",
+        descriptionTargets: "በአሁኑ ጊዜ፣ የእኔ ትኩረት እንደ ፕሮግራመር ለመድገም አዲስ ስጋቶችን መፈለግ ላይ ነው። እውቀቴን ለማሻሻል ቁርጠኛ ነኝ፣ በተለይም በback-end፣ አዲስ መሳሪያዎችን ለመማር እና የፕሮግራሚንግ ክህሎቶቼን ለማሻሻል። በተጨማሪም፣ ከበለጠ ልምድ ያላቸው ሰዎች ለመማር እና በተጣጣሚ ዘዴዎች ውስጥ የተገኘውን እውቀት ለመተግበር እፈልጋለሁ፣ ሁልጊዜ ያለማቋርጥ ለመሻሻል ዓላማ።"
 
     }
 }
@@ -38,18 +38,18 @@ export function Services() {
     return (
         <section
             id="services"
-            className="bg-gray-900 min-h-screen pt-14"
+            className="bg-[#0a0f0a] min-h-screen pt-14"
         >
             <div className="px-4 md:px-0 max-w-screen-xl lg:max-w-[70rem] xl:max-w-[76rem] 2xl:max-w-[92rem] py-8 mx-auto min-h-fit">
                 <div className="text-center">
-                    <p className="text-3xl font-bold text-white relative inline-block">
+                    <p className="text-3xl font-bold text-[#e4f5e4] relative inline-block">
                         {translation[language].title}
-                        <span className="block w-24 h-1 bg-blue-500 mt-2 mx-auto rounded-full"></span>
+                        <span className="block w-24 h-1 bg-[#22c55e] mt-2 mx-auto rounded-full"></span>
                     </p>
                 </div>
                 <div className="text-center mt-8 max-w-3xl mx-auto">
-                    <p className="text-3xl text-white font-bold">{translation[language].question}</p>
-                    <p className="text-xl text-gray-400 mt-3">{translation[language].anwser}</p>
+                    <p className="text-3xl text-[#e4f5e4] font-bold">{translation[language].question}</p>
+                    <p className="text-xl text-[#9db89d] mt-3">{translation[language].anwser}</p>
                 </div>
                 <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
                     <motion.div
@@ -80,7 +80,7 @@ export function Services() {
                     </motion.div>
                 </div>
                 <div className="text-center mt-8 max-w-3xl mx-auto">
-                    <p className="text-xl text-gray-400 mt-3">{translation[language].anwser2}</p>
+                    <p className="text-xl text-[#9db89d] mt-3">{translation[language].anwser2}</p>
                 </div>
             </div>
         </section>
