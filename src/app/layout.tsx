@@ -14,7 +14,10 @@ export const metadata: Metadata = {
     "responsive websites", "web services", "API specialist", "UI developer"
   ],
   icons: {
-    icon: "/logo.webp",
+    icon: [
+      { url: "/logo.webp", type: "image/webp" },
+      { url: "/logo.png", type: "image/png" },
+    ],
     shortcut: "/logo.webp",
     apple: "/logo.webp",
   },
@@ -22,8 +25,8 @@ export const metadata: Metadata = {
     title: "Boru Tamene | Compute Engineer",
     description: "Portfolio of Boru Tamene, Compute Engineer. Explore my projects and journey in technology.",
     type: "website",
-    images: [{ url: "/logo.webp", width: 1200, height: 600, alt: "Boru Tamene | Compute Engineer" }],
-    url: "/logo.webp"
+    images: [{ url: "/logo.png", width: 1200, height: 600, alt: "Boru Tamene | Compute Engineer" }],
+    url: "/logo.png"
   },
   robots: {
     index: true,
