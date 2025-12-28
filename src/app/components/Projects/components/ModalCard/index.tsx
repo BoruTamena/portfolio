@@ -29,9 +29,10 @@ interface ModalCardProps {
     src: string | StaticImageData;
     repository: string;
     post: string;
+    isVideo?: boolean;
 }
 
-export default function ModalCard({ isOpen, onClose, title, src, description, stack, repository, post }: ModalCardProps) {
+export default function ModalCard({ isOpen, onClose, title, src, description, stack, repository, post, isVideo = false }: ModalCardProps) {
     const { language } = useLanguage();
     const [mounted, setMounted] = useState(false);
 
@@ -104,16 +105,28 @@ export default function ModalCard({ isOpen, onClose, title, src, description, st
                         {/* Content */}
                         <div className="overflow-y-auto flex-1">
                             <div className="flex flex-col gap-6 p-6">
-                                {/* Image Section */}
+                                {/* Image/Video Section */}
                                 <div className="w-full">
                                     <div className="relative rounded-lg overflow-hidden border border-[#2d3a2d] bg-[#1a2a1a]">
-                                        <Image
-                                            src={src}
-                                            width={800}
-                                            height={450}
-                                            alt={title}
-                                            className="w-full h-auto object-cover"
-                                        />
+                                        {isVideo ? (
+                                            <video
+                                                src={src as string}
+                                                className="w-full h-auto object-cover"
+                                                autoPlay
+                                                loop
+                                                muted
+                                                playsInline
+                                                controls
+                                            />
+                                        ) : (
+                                            <Image
+                                                src={src}
+                                                width={800}
+                                                height={450}
+                                                alt={title}
+                                                className="w-full h-auto object-cover"
+                                            />
+                                        )}
                                     </div>
                                 </div>
 

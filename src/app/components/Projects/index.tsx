@@ -37,6 +37,7 @@ export function Projects() {
         title={project.title}
         descriptionBr={project.descriptionBr}
         descriptionEn={project.descriptionEn}
+        isVideo={(project as any).isVideo || false}
       />
     ))
     : projectsData.slice(0, 6).map(project => (
@@ -50,6 +51,7 @@ export function Projects() {
         title={project.title}
         descriptionBr={project.descriptionBr}
         descriptionEn={project.descriptionEn}
+        isVideo={(project as any).isVideo || false}
       />
     ));
 

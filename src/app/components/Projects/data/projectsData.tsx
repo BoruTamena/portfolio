@@ -3,7 +3,8 @@ export const ProjectsData = [
     {
         id: "goChat",
         index: 0,
-        src: "/go-chat.png", // Add go-chat.png to public folder
+        src: "/go-chat-video.mp4",
+        isVideo: true, // Flag to indicate this is a video
         stack: [SiGo, SiMongodb, SiDocker],
         post: "",
         repository: "", // Add repository URL when available
@@ -32,7 +33,7 @@ Tasks Done:
     {
         id: "jobBoard",
         index: 1,
-        src: "/job-board.png", // Add job-board.png to public folder
+        src: "/job-board.png",
         stack: [SiGo, SiMongodb, SiDocker],
         post: "",
         repository: "", // Add repository URL when available
@@ -73,7 +74,7 @@ Outcomes:
     {
         id: "urlShortener",
         index: 2,
-        src: "/url-shortener.png", // Add url-shortener.png to public folder
+        src: "/url-shortener.jpeg",
         stack: [SiGo, SiMongodb, SiRedis, SiDocker, SiNginx, SiPrometheus, SiGrafana],
         post: "",
         repository: "", // Add repository URL when available

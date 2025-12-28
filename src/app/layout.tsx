@@ -2,10 +2,8 @@ import type { Metadata } from "next";
 import { LanguageProvider } from "./providers/LanguageContext";
 import "./globals.css";
 
-const imageUrl = "https://www.devsamuelbrito.com.br/portifolio.png";
-
 export const metadata: Metadata = {
-  title: "Portfolio | Boru Tamene",
+  title: "Boru Tamene | Computer Engineer",
   description: "Portfolio of Boru Tamene, Compute Engineer specializing in cloud computing, distributed systems, and software engineering.",
   keywords: [
     "Boru Tamene", "Compute Engineer", "Cloud Computing", "Distributed Systems", "Software Engineering", "portfolio", "Next.js", "TypeScript", "React", "JavaScript", "Tailwind CSS", "Golang", "Python", "Django",
@@ -15,13 +13,17 @@ export const metadata: Metadata = {
     "code portfolio", "web solutions", "modern web apps", "React applications",
     "responsive websites", "web services", "API specialist", "UI developer"
   ],
-
+  icons: {
+    icon: "/logo.webp",
+    shortcut: "/logo.webp",
+    apple: "/logo.webp",
+  },
   openGraph: {
     title: "Boru Tamene | Compute Engineer",
     description: "Portfolio of Boru Tamene, Compute Engineer. Explore my projects and journey in technology.",
     type: "website",
-    images: [{ url: imageUrl, width: 1200, height: 600, alt: "Boru Tamene | Compute Engineer" }],
-    url: "https://www.devsamuelbrito.com.br/"
+    images: [{ url: "/logo.webp", width: 1200, height: 600, alt: "Boru Tamene | Compute Engineer" }],
+    url: "/logo.webp"
   },
   robots: {
     index: true,

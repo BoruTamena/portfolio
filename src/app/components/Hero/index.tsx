@@ -4,6 +4,7 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { useLanguage } from "@/app/providers/LanguageContext";
 import { motion } from "framer-motion";
 import { SocialMediaButton } from "../Header/components/SocialMediaButton";
+import Image from "next/image";
 
 
 const translation = {
@@ -13,7 +14,7 @@ const translation = {
     cv: "Get Resume",
     introducation: (
       <>
-        Building <span className="font-semibold text-[#22c55e]">scalable software solutions</span> with expertise in <span className="font-semibold text-[#22c55e]">full-stack development</span>, <span className="font-semibold text-[#22c55e]">RESTful APIs</span>, and <span className="font-semibold text-[#22c55e]">cloud architectures</span>. Passionate about clean code, system reliability, and delivering production-ready applications.
+        I build <span className="font-semibold text-[#22c55e]">reliable, scalable software</span>—from <span className="font-semibold text-[#22c55e]">full-stack apps</span> to <span className="font-semibold text-[#22c55e]">cloud-native solutions</span>—focusing on <span className="font-semibold text-[#22c55e]">clean code</span>, <span className="font-semibold text-[#22c55e]">smart design</span>, and <span className="font-semibold text-[#22c55e]">real-world impact</span>.
       </>
     )
 
@@ -24,7 +25,7 @@ const translation = {
     cv: "ሲቪ ያውርዱ",
     introducation: (
       <>
-        <span className="font-semibold text-[#22c55e]">ሊሰፋ የሚችል የሶፍትዌር መፍትሄዎች</span> በ<span className="font-semibold text-[#22c55e]">ሙሉ-ቁልል ልማት</span>፣ <span className="font-semibold text-[#22c55e]">RESTful APIs</span>፣ እና <span className="font-semibold text-[#22c55e]">ክላውድ አርክቴክቸሮች</span> ላይ በችሎታ እገነባለሁ። በንጹህ ኮድ፣ የስርዓት አስተማማኝነት እና ለምርት-ዝግጁ መተግበሪያዎች ትኩረት አድርጌያለሁ።
+        <span className="font-semibold text-[#22c55e]">አስተማማኝ፣ ሊሰፋ የሚችል ሶፍትዌር</span> እገነባለሁ—ከ<span className="font-semibold text-[#22c55e]">ሙሉ-ቁልል መተግበሪያዎች</span> እስከ <span className="font-semibold text-[#22c55e]">ክላውድ-ተፈጥሯዊ መፍትሄዎች</span>—በ<span className="font-semibold text-[#22c55e]">ንጹህ ኮድ</span>፣ <span className="font-semibold text-[#22c55e]">ብልህ ዲዛይን</span>፣ እና <span className="font-semibold text-[#22c55e]">እውነተኛ የዓለም ተጽእኖ</span> ላይ በማተኮር።
       </>
     )
   }
@@ -46,6 +47,23 @@ export function Hero({ onDownloadClick }: HeroProps) {
         <div className="container mx-auto px-4 md:px-6 lg:px-8 max-w-4xl">
           <div className="flex flex-col items-center text-center space-y-6">
             
+            {/* Logo */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+              className="mb-4"
+            >
+              <Image
+                src="/logo.webp"
+                alt="Boru Tamene Logo"
+                width={120}
+                height={120}
+                className="rounded-full border-2 border-[#22c55e]/30 shadow-lg shadow-[#22c55e]/10"
+                unoptimized
+              />
+            </motion.div>
+
             {/* Greeting - Simplified */}
             <motion.div
               initial={{ opacity: 0, y: 10 }}

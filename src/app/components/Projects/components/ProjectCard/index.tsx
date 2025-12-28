@@ -15,11 +15,11 @@ interface ProjectCardProps {
     repository: string;
     post: string;
     index: number;
-
+    isVideo?: boolean;
 }
 
 
-export function ProjectCard({ title, src, stack, descriptionEn, descriptionBr, post, repository, index
+export function ProjectCard({ title, src, stack, descriptionEn, descriptionBr, post, repository, index, isVideo = false
 }: ProjectCardProps) {
 
 
@@ -46,13 +46,24 @@ export function ProjectCard({ title, src, stack, descriptionEn, descriptionBr, p
             <div
                 className="bg-[#0f1a0f] border border-[#2d3a2d] p-5 rounded-lg shadow-lg hover:border-[#22c55e] transition-all duration-300 group relative"
             >
-                <Image
-                    src={src}
-                    alt={title}
-                    className="w-full h-48 object-cover rounded-lg"
-                    width={400}
-                    height={300}
-                />
+                {isVideo ? (
+                    <video
+                        src={src as string}
+                        className="w-full h-48 object-cover rounded-lg"
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                    />
+                ) : (
+                    <Image
+                        src={src}
+                        alt={title}
+                        className="w-full h-48 object-cover rounded-lg"
+                        width={400}
+                        height={300}
+                    />
+                )}
                 <h3 className="text-xl font-semibold text-[#e4f5e4] mt-3">{title}</h3>
 
                 <div className="flex items-center gap-2 mt-2 text-[#9db89d] py-2">
@@ -66,7 +77,7 @@ export function ProjectCard({ title, src, stack, descriptionEn, descriptionBr, p
                     {translation[language].button}
                 </button>
             </div>
-            <ModalCard description={translation[language].description} src={src} isOpen={isOpen} onClose={() => setIsOpen(!isOpen)} title={title} stack={stack} repository={repository} post={post} />
+            <ModalCard description={translation[language].description} src={src} isOpen={isOpen} onClose={() => setIsOpen(!isOpen)} title={title} stack={stack} repository={repository} post={post} isVideo={isVideo} />
         </motion.div>
     )
 }

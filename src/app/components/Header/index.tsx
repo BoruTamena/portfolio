@@ -1,8 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
-import { ButtonTranslate } from "./components/ButtonTranslate";
+import { LanguageDropdown } from "./components/LanguageDropdown";
 import { Menu, X } from "lucide-react";
-import usaFlag from "@/assets/images/USA-flag.png";
 import { useLanguage } from "@/app/providers/LanguageContext";
 import { HeroItem, NavBarItem } from "./components/NavBarItem";
 import { motion } from "framer-motion";
@@ -89,9 +88,8 @@ export const Navbar = () => {
               <NavBarItem href="#contact" id="contact" label={translation[currentLanguage].contact} activeSection="contact" setActiveSection={setActiveSection} />
 
               {isOpen && (
-                <li className="flex flex-row  gap-2">
-                  <ButtonTranslate languageDefault={"en"} src={usaFlag} title="Switch to English" />
-                  <ButtonTranslate languageDefault={"am"} title="አማርኛ" />
+                <li className="mt-4 lg:mt-0">
+                  <LanguageDropdown />
                 </li>
               )}
             </ul>
@@ -99,8 +97,7 @@ export const Navbar = () => {
 
 
           <div className="hidden lg:flex items-center">
-            <ButtonTranslate languageDefault={"en"} src={usaFlag} title="Switch to English" />
-            <ButtonTranslate languageDefault={"am"} title="አማርኛ" />
+            <LanguageDropdown />
           </div>
 
         </div>
