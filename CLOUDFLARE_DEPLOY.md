@@ -4,22 +4,58 @@
 
 Your Next.js app is now configured for static export. The build will output to the `out` directory.
 
-## 🔧 Cloudflare Pages Dashboard Settings
+## 🔧 Cloudflare Pages Dashboard Settings - STEP BY STEP
 
-Go to your Cloudflare Pages project settings and configure:
+### Step 1: Access Your Project
+1. Log in to [Cloudflare Dashboard](https://dash.cloudflare.com)
+2. Go to **Workers & Pages** → **Pages**
+3. Click on your project name
 
-### Build Settings:
-1. **Framework preset:** `Next.js (Static HTML Export)` or `None`
-2. **Build command:** `pnpm run build`
-3. **Build output directory:** `out`
-4. **Root directory:** `/` (leave empty)
+### Step 2: Go to Build Settings
+1. Click on **Settings** tab (top navigation)
+2. Scroll down to **Builds & deployments** section
+3. Click **Configure build** or **Edit configuration**
 
-### ⚠️ IMPORTANT - Remove Deploy Command:
-1. Go to **Settings** → **Builds & deployments**
-2. Find the **Deploy command** field
-3. **DELETE** or **LEAVE EMPTY** the deploy command
-4. Cloudflare Pages will automatically deploy the `out` directory after build
-5. **DO NOT** use `npx wrangler deploy` - that's for Workers, not Pages!
+### Step 3: Configure Build Settings
+Set these exact values:
+
+- **Framework preset:** Select `Next.js (Static HTML Export)` from dropdown
+  - If that option doesn't exist, select `None` or `Other`
+  
+- **Build command:** 
+  ```
+  pnpm run build
+  ```
+
+- **Build output directory:**
+  ```
+  out
+  ```
+
+- **Root directory:** 
+  ```
+  /
+  ```
+  (Leave empty or set to `/`)
+
+### Step 4: ⚠️ CRITICAL - Remove Deploy Command
+1. In the same **Builds & deployments** section
+2. Find the field labeled **Deploy command** or **Deploy step**
+3. **CLEAR/DELETE** everything in that field
+4. Leave it completely **EMPTY**
+5. **DO NOT** put `npx wrangler deploy` or any other command here
+
+### Step 5: Alternative (If Deploy Command Field is Required)
+If Cloudflare Pages won't let you leave the deploy command empty, use:
+```
+bash deploy.sh
+```
+This will run the dummy script that does nothing (deployment is automatic).
+
+### Step 6: Save and Redeploy
+1. Click **Save** or **Update**
+2. Go to **Deployments** tab
+3. Click **Retry deployment** on the failed build, or push a new commit to trigger a new build
 
 ### Environment Variables:
 - No environment variables needed for this static site
