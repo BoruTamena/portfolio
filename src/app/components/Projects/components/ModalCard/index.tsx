@@ -42,15 +42,22 @@ export default function ModalCard({ isOpen, onClose, title, src, description, st
 
 
     useEffect(() => {
-        // Fechar o modal quando pressionar ESC
+        // Prevent body scroll when modal is open
+        if (isOpen) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'unset';
+        }
+
+        // Close modal when pressing ESC
         const handleEscKey = (e: KeyboardEvent) => {
             if (e.key === "Escape") {
                 onClose();
             }
         };
 
-        // Fechar o modal ao clicar fora dele
-        const handleClickOutside = (e: MouseEvent) => {
+        // Close modal when clicking outside
+        const handleClickOutside = (e: MouseEvent | TouchEvent) => {
             const modalElement = document.getElementById("modal-container");
             if (modalElement && !modalElement.contains(e.target as Node)) {
                 onClose();
@@ -58,15 +65,18 @@ export default function ModalCard({ isOpen, onClose, title, src, description, st
         };
 
         if (isOpen) {
-            // Adicionar event listeners
+            // Add event listeners
             window.addEventListener("keydown", handleEscKey);
             window.addEventListener("mousedown", handleClickOutside);
+            window.addEventListener("touchstart", handleClickOutside);
         }
 
-        // Limpar os event listeners quando o modal for fechado ou o componente for desmontado
+        // Clean up event listeners
         return () => {
+            document.body.style.overflow = 'unset';
             window.removeEventListener("keydown", handleEscKey);
             window.removeEventListener("mousedown", handleClickOutside);
+            window.removeEventListener("touchstart", handleClickOutside);
         };
     }, [isOpen, onClose]);
     if (!mounted) return null;
@@ -78,8 +88,13 @@ export default function ModalCard({ isOpen, onClose, title, src, description, st
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
-                    className="fixed inset-0 flex items-center justify-center bg-black/80 backdrop-blur-sm z-50 p-4"
+                    className="fixed inset-0 flex items-center justify-center bg-black/80 backdrop-blur-sm z-50 p-2 sm:p-4"
                     onClick={onClose}
+                    onTouchStart={(e) => {
+                        if (e.target === e.currentTarget) {
+                            onClose();
+                        }
+                    }}
                 >
                     <motion.div
                         id="modal-container"

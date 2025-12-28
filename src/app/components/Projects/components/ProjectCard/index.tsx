@@ -44,7 +44,8 @@ export function ProjectCard({ title, src, stack, descriptionEn, descriptionBr, p
         >
 
             <div
-                className="bg-[#0f1a0f] border border-[#2d3a2d] p-5 rounded-lg shadow-lg hover:border-[#22c55e] transition-all duration-300 group relative"
+                className="bg-[#0f1a0f] border border-[#2d3a2d] p-5 rounded-lg shadow-lg hover:border-[#22c55e] transition-all duration-300 group relative cursor-pointer"
+                onClick={() => setIsOpen(!isOpen)}
             >
                 {isVideo ? (
                     <video
@@ -73,7 +74,24 @@ export function ProjectCard({ title, src, stack, descriptionEn, descriptionBr, p
                         ))
                     }
                 </div>
-                <button className="hidden sm:block absolute bottom-5 right-5 bg-[#1a2a1a] border border-[#2d3a2d] px-4 py-2 text-[#e4f5e4] rounded-md opacity-0 duration-300 hover:opacity-100 group-hover:opacity-100 hover:bg-[#2d3a2d] hover:border-[#22c55e] hover:transition-all font-medium" onClick={() => setIsOpen(!isOpen)}>
+                {/* Desktop: Hover button */}
+                <button 
+                    className="hidden sm:block absolute bottom-5 right-5 bg-[#1a2a1a] border border-[#2d3a2d] px-4 py-2 text-[#e4f5e4] rounded-md opacity-0 duration-300 hover:opacity-100 group-hover:opacity-100 hover:bg-[#2d3a2d] hover:border-[#22c55e] hover:transition-all font-medium" 
+                    onClick={(e) => {
+                        e.stopPropagation();
+                        setIsOpen(!isOpen);
+                    }}
+                >
+                    {translation[language].button}
+                </button>
+                {/* Mobile: Always visible button */}
+                <button 
+                    className="sm:hidden w-full mt-4 bg-[#1a2a1a] border border-[#2d3a2d] px-4 py-2 text-[#e4f5e4] rounded-md hover:bg-[#2d3a2d] hover:border-[#22c55e] transition-all font-medium" 
+                    onClick={(e) => {
+                        e.stopPropagation();
+                        setIsOpen(!isOpen);
+                    }}
+                >
                     {translation[language].button}
                 </button>
             </div>
