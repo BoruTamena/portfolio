@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 
 interface NavbarItemProps {
     href: string;
@@ -27,33 +28,24 @@ export function NavBarItem({ href, id, label, activeSection, setActiveSection }:
     )
 }
 
-{/* <li>
-    <Link
-        href="#about"
-        className={`block py-2 px-4 text-white rounded-lg font-bold hover:text-blue-500  transition-all duration-200 lg:p-0 ${activeSection === "about" ? "text-blue-700 " : ""}`}
-        onClick={(e) => {
-        e.preventDefault();
-        const element = document.getElementById("about");
-        element?.scrollIntoView({ behavior: "smooth" });
-        setActiveSection("about");
-        }}
-        >
-        {translation[language].about}
-    </Link>
-</li> */}
-
-
 export function HeroItem() {
     return (
         <Link
             href="#hero"
-            className="flex items-center"
+            className="flex items-center gap-2"
             onClick={(e) => {
                 e.preventDefault();
                 const element = document.getElementById("hero");
                 element?.scrollIntoView({ behavior: "smooth" });
             }}
         >
+            <Image
+                src="/logo.webp"
+                alt="Boru Tamene Logo"
+                width={32}
+                height={32}
+                className="object-contain"
+            />
             <span className="self-center text-xl 2xl:text-2xl text-[#e4f5e4] font-semibold whitespace-nowrap hover:text-[#22c55e] transition-colors">
                 Boru Tamene
             </span>

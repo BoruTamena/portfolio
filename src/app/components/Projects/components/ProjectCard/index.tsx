@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 
 interface ProjectCardProps {
     title: string,
-    src: StaticImageData,
+    src: StaticImageData | string,
     stack: IconType[],
     descriptionEn: string,
     descriptionBr: string,

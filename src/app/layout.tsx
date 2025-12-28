@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: "Portfolio | Boru Tamene",
   description: "Portfolio of Boru Tamene, Compute Engineer specializing in cloud computing, distributed systems, and software engineering.",
   keywords: [
-    "Boru Tamene", "Compute Engineer", "Cloud Computing", "Distributed Systems", "Software Engineering", "portfolio", "Next.js", "TypeScript", "React", "JavaScript", "Tailwind CSS", "Node.js",
+    "Boru Tamene", "Compute Engineer", "Cloud Computing", "Distributed Systems", "Software Engineering", "portfolio", "Next.js", "TypeScript", "React", "JavaScript", "Tailwind CSS", "Golang", "Python", "Django",
     "engineer", "developer", "portfolio", "compute engineer", "software engineer", "coding",
     "cloud engineer", "systems engineer", "backend engineer", "full-stack developer", "web programming", "software development",
     "hire engineer", "remote engineer", "tech professional",

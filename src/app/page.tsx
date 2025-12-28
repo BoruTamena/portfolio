@@ -6,6 +6,7 @@ import { Stack } from "./components/Stack";
 import { About } from "./components/About";
 import { Services } from "./components/Services";
 import { Contact } from "./components/Contact";
+import { Companies } from "./components/Companies";
 import ScrollToTopButton from "./components/ScrollTopButton";
 import AlertDownload from "./components/AlertDownload";
 import { useState } from "react";
@@ -25,6 +26,7 @@ export default function App() {
       <Navbar />
       <Hero onDownloadClick={handleDownloadClick} />
       <About />
+      <Companies />
       <Projects />
       <Stack />
       <Services />

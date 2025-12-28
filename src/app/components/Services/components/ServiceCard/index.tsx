@@ -2,17 +2,17 @@
 import { IconType } from "react-icons"
 import { TbApi } from "react-icons/tb";
 import { FaDatabase, FaExchangeAlt } from "react-icons/fa";
+import { ReactNode } from "react";
 
 interface ServiceCardProps {
     icon: IconType;
     title: string;
-    description: string;
+    description: string | ReactNode;
 }
 
 interface ServiceCardBackProps {
-
     title: string;
-    description: string;
+    description: string | ReactNode;
 }
 export function ServiceCard({ icon: Icon, title, description }: ServiceCardProps) {
     return (

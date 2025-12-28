@@ -9,24 +9,39 @@ import { Footer } from "../Footer";
 const translations = {
     en: {
         title: "Contact",
-        description: "I’m always open to new connections and opportunities. If you have any questions, would like to discuss an idea, or are looking for a partnership, I’d be happy to chat. Feel free to message me on my social media channels below, and I’ll do my best to respond promptly.",
+        description: (
+            <>
+                I'm always open to <span className="font-bold text-[#22c55e]">collaborations, knowledge sharing, and new opportunities</span>. Whether you want to discuss a project, exchange ideas, or explore potential partnerships, I'd be happy to connect.
+            </>
+        ),
         location: "Location",
-        description2: "I love learning from new experiences and challenges. Whether it's to share ideas, ask for advice or discuss future projects, I'm here to help. Let's exchange ideas and explore new possibilities together!",
-        description3: "Feel free to explore my repositories, contribute new features, connect with me on Linkedin, send me an email or even invite me for a virtual coffee.",
+        description2: (
+            <>
+                Feel free to reach out via <span className="font-bold text-[#22c55e]">LinkedIn, email, or my social channels</span>, and I'll respond as promptly as possible. I also welcome exploring my repositories, contributing to projects, or even a <span className="font-bold text-[#22c55e]">virtual coffee chat</span> to discuss technology, innovation, and future endeavors.
+            </>
+        ),
+        description3: "Let's connect, share insights, and explore new possibilities together!",
         developer: "Developed by Boru Tamene",
         rights: "© 2025 Boru Tamene. All rights reserved.",
         title2: "Let's Connect"
     },
     am: {
         title: "እውቂያ",
-        description: "ለአዲስ ግንኙነቶች እና እድሎች ሁልጊዜ ክፍት ነኝ። ማንኛውም ጥያቄ ካለዎት፣ ሀሳብ ለመወያየት ከፈለጉ ወይም ባለንግድ ግንኙነት ከፈለጉ፣ ለመነጋገር ደስ ይለኛል። ከዚህ በታች ባሉት ማህበራዊ ሚዲያ ቻናሎቼ ላይ መልእክት ላኩልኝ፣ እና በተቻለ ፍጥነት ለመመለስ እሞክራለሁ።",
+        description: (
+            <>
+                ለ<span className="font-bold text-[#22c55e]">ተባባሪነት፣ እውቀት መጋራት እና አዳዲስ እድሎች</span> ሁልጊዜ ክፍት ነኝ። ፕሮጀክት ለመወያየት፣ ሀሳቦችን ለመለዋወጥ ወይም ሊሆኑ የሚችሉ አጋርነቶችን ለመመርመር ከፈለጉ፣ ለመገናኘት ደስ ይለኛል።
+            </>
+        ),
         location: "አካባቢ",
-        description2: "ከአዲስ ልምዶች እና ስጋቶች መማርን እወዳለሁ። ሀሳቦችን ለመጋራት፣ ምክር ለመጠየቅ ወይም የወደፊት ፕሮጀክቶችን ለመወያየት ቢሆንም፣ እዚህ አለሁ ለመርዳት። ሀሳቦችን እንለዋወጥ እና አዲስ እድሎችን አንድ ላይ እንመርምር!",
-        description3: "የእኔን ማከማቻዎችን ለመመርመር፣ አዲስ ባህሪያትን ለመስጠት፣ በLinkedin ላይ ከእኔ ጋር ለመገናኘት፣ ኢሜይል ላኩልኝ ወይም ለምሳሌ ካፌ ለመጋበዝ ነፃነት ይሰማዎ።",
+        description2: (
+            <>
+                በ<span className="font-bold text-[#22c55e]">LinkedIn፣ ኢሜይል ወይም ማህበራዊ ቻናሎቼ</span> ላይ ለመገናኘት ነፃነት ይሰማዎ፣ እና በተቻለ ፍጥነት ምላሽ እሰጣለሁ። የእኔን ማከማቻዎችን ለመመርመር፣ ለፕሮጀክቶች አስተዋጽኦ ማድረግ፣ ወይም <span className="font-bold text-[#22c55e]">ምናባዊ ቡና ውይይት</span> ለመደረግ እንኳን እንደምትፈልጉ እንቀበላለን፣ ቴክኖሎጂ፣ ፈጠራ እና የወደፊት ርሃጎችን ለመወያየት።
+            </>
+        ),
+        description3: "እንገናኝ፣ ግንዛቤዎችን እንጋራ እና አዳዲስ እድሎችን አንድ ላይ እንመርምር!",
         developer: "በቦሩ ታመኔ የተዘጋጀ",
         rights: "© 2025 ቦሩ ታመኔ። ሁሉም መብቶች የተጠበቁ ናቸው።",
         title2: "እንገናኝ"
-
     }
 }
 
@@ -42,20 +57,22 @@ export function Contact() {
                     </p>
                     <div className="mt-5 my-auto">
                         <p className="font-bold py-2 text-[#e4f5e4] text-xl 2xl:text-2xl">{translations[language].title2}</p>
-                        <p className="text-[#9db89d] py-2 px-4 sm:px-12 md:px-32 text-xl 2xl:pt-6">{translations[language].description}</p>
-                        <p className="text-[#9db89d] py-2 px-4 sm:px-12 md:px-32 text-xl 2xl:pt-6">
+                        <p className="text-[#9db89d] py-2 px-4 sm:px-12 md:px-32 text-xl 2xl:pt-6 leading-relaxed">
+                            {translations[language].description}
+                        </p>
+                        <p className="text-[#9db89d] py-2 px-4 sm:px-12 md:px-32 text-xl 2xl:pt-6 leading-relaxed">
                             {translations[language].description2}
                         </p>
-                        <p className="text-[#9db89d] py-2 px-4 sm:px-12 md:px-32 text-xl 2xl:pt-6">
+                        <p className="text-[#9db89d] py-2 px-4 sm:px-12 md:px-32 text-xl 2xl:pt-6 font-medium">
                             {translations[language].description3}
                         </p>
 
                         <div className="flex justify-center gap-8 sm:gap-10 mt-8 flex-wrap">
-                            <ContactIcon title="Linkedin" Icon={FaLinkedin} href="https://www.linkedin.com/in/samuel-fava-de-brito/" />
-                            <ContactIcon title="WhatsApp" Icon={FaWhatsapp} href="https://api.whatsapp.com/send/?phone=5517982299393&text=Oi!+Vi+o+seu+portfólio+e+estou+curioso(a)+para+saber+mais+sobre+você+e+seus+projetos.+Vamos+conversar%3F+&type=phone_number&app_absent=0" />
-                            <ContactIcon title="Github" Icon={FaGithub} href="https://github.com/DevSamuelBrito" />
-                            <ContactIcon title="Email" Icon={MdEmail} href="mailto:samuelbrito.dev@gmail.com" />
-                            <ContactIcon title={translations[language].location} Icon={MdLocationOn} href="https://g.co/kgs/aLZQvv8" />
+                            <ContactIcon title="Linkedin" Icon={FaLinkedin} href="https://www.linkedin.com/in/boru-tamena" />
+                            <ContactIcon title="WhatsApp" Icon={FaWhatsapp} href="https://api.whatsapp.com/send/?phone=251953301736&text=Hello!+I+saw+your+portfolio+and+I%27d+like+to+connect+or+discuss+potential+opportunities.+Let%27s+chat%21&type=phone_number&app_absent=0" />
+                            <ContactIcon title="Github" Icon={FaGithub} href="https://github.com/BoruTamena" />
+                            <ContactIcon title="Email" Icon={MdEmail} href="mailto:borubt@gmail.com" />
+                            <ContactIcon title={translations[language].location} Icon={MdLocationOn} href="https://www.google.com/maps/place/Addis+Ababa,+Ethiopia" />
                         </div>
                     </div>
                 </div>

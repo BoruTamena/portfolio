@@ -15,7 +15,11 @@ const translation = {
         titleBack: "Back-End",
         titleTargets: "Goals and Objectives",
         descriptionWeb: "My focus is on creating web experiences that solve real problems, combining responsive design with robust functionality. I believe that a good web project should be intuitive, accessible and fast. Each project is an opportunity to learn new technologies, improve my skills in React, Next.js and other essential tools, and challenge myself to deliver increasingly efficient and scalable solutions.",
-        descriptionBack: "I have experience developing APIs and scalable systems using Node.js and ASP.NET, always focusing on security, performance, and good architectural practices. I work with databases like PostgreSQL and Firebird, structuring applications that ensure integrity, efficient data flow, and easy maintenance. My goal is to deliver robust solutions that reliably connect the frontend to the backend, providing a solid foundation for any application.",
+        descriptionBack: (
+            <>
+                I specialize in building <span className="font-bold text-[#22c55e]">high-performance APIs</span> and <span className="font-bold text-[#22c55e]">scalable backend systems</span> using <span className="font-bold text-[#22c55e]">Golang</span>, <span className="font-bold text-[#22c55e]">Python</span>, and <span className="font-bold text-[#22c55e]">Django</span>. My expertise includes designing <span className="font-bold text-[#22c55e]">RESTful APIs</span>, implementing <span className="font-bold text-[#22c55e]">microservices architectures</span>, and developing <span className="font-bold text-[#22c55e]">real-time applications</span> with WebSockets. I work with databases like <span className="font-bold text-[#22c55e]">PostgreSQL</span> and <span className="font-bold text-[#22c55e]">MongoDB</span>, ensuring data integrity, efficient querying, and optimal performance. My approach emphasizes <span className="font-bold text-[#22c55e]">clean architecture</span>, <span className="font-bold text-[#22c55e]">security best practices</span>, and <span className="font-bold text-[#22c55e]">maintainable code</span> to deliver production-ready backend solutions.
+            </>
+        ),
         descriptionTargets: "Currently, my focus is on seeking new challenges to grow as a programmer. I am committed to improving my knowledge, especially in back-end, learning new tools and improving my programming skills. In addition, I seek to learn from more experienced people and apply the knowledge acquired in agile methodologies, always with the goal of constantly evolving."
     },
     am: {
@@ -27,7 +31,11 @@ const translation = {
         titleBack: "Back-End",
         titleTargets: "ግቦች እና ዓላማዎች",
         descriptionWeb: "የእኔ ትኩረት እውነተኛ ችግሮችን የሚፈቱ የድር ልምዶችን በመፍጠር ላይ ነው፣ ምላሽ የሚሰጥ ዲዛይንን ከጠንካራ ተግባራዊነት ጋር በማጣመር። ጥሩ የድር ፕሮጀክት ምናልባታዊ፣ ተደራሽ እና ፈጣን መሆን አለበት ብዬ አምናለሁ። እያንዳንዱ ፕሮጀክት አዲስ ቴክኖሎጂዎችን ለመማር፣ በ React፣ Next.js እና ሌሎች አስፈላጊ መሳሪያዎች ላይ ክህሎቶቼን ለማሻሻል እና የበለጠ ውጤታማ እና ማስፋፊያ የሆኑ መፍትሄዎችን ለመስጠት እንድተጋ የሚያደርገኝ እድል ነው።",
-        descriptionBack: "Node.js እና ASP.NET በመጠቀም APIs እና ማስፋፊያ ስርዓቶችን በማዳበር ልምድ አለኝ፣ ሁልጊዜ በደህንነት፣ አፈጻጸም እና ጥሩ የስርዓት ስርዓት ልምዶች ላይ ትኩረት በማድረግ። እንደ PostgreSQL እና Firebird ያሉ የውሂብ ጎዳናዎች እሰራለሁ፣ የመጣርነት፣ ውጤታማ የውሂብ ፍሰት እና ቀላል ጥገናን የሚያረጋግጡ መተግበሪያዎችን በመዋቅር። የእኔ ግብ የፊት ጫፍን ከጀርባ ጫፍ ጋር በተመጣጣኝ ሁኔታ የሚያገናኝ ጠንካራ መፍትሄዎችን ማቅረብ ነው፣ ለማንኛውም መተግበሪያ ጠንካራ መሰረት ማቅረብ።",
+        descriptionBack: (
+            <>
+                በ<span className="font-bold text-[#22c55e]">ከፍተኛ አፈጻጸም APIs</span> እና <span className="font-bold text-[#22c55e]">ሊሰፋ የሚችል የኋላ-መጨረሻ ስርዓቶች</span> ማሰራት ላይ እተለያያለሁ፣ <span className="font-bold text-[#22c55e]">Golang</span>፣ <span className="font-bold text-[#22c55e]">Python</span>፣ እና <span className="font-bold text-[#22c55e]">Django</span> በመጠቀም። የእኔ ችሎታ <span className="font-bold text-[#22c55e]">RESTful APIs</span> ንድፍ፣ <span className="font-bold text-[#22c55e]">ማይክሮሰርቪስ አርክቴክቸሮች</span> ተግባራዊ ማድረግ፣ እና <span className="font-bold text-[#22c55e]">የእውነተኛ ጊዜ መተግበሪያዎች</span> በWebSockets ማዳበርን ያካትታል። <span className="font-bold text-[#22c55e]">PostgreSQL</span> እና <span className="font-bold text-[#22c55e]">MongoDB</span> ካሉ የውሂብ ጎታዎች ጋር እሰራለሁ፣ የውሂብ ታማኝነት፣ ውጤታማ ጥያቄዎች እና ምርጥ አፈጻጸምን ማረጋገጥ። የእኔ አቀራረብ <span className="font-bold text-[#22c55e]">ንጹህ አርክቴክቸር</span>፣ <span className="font-bold text-[#22c55e]">ደህንነት ምርጥ ልምዶች</span>፣ እና <span className="font-bold text-[#22c55e]">ሊጠበቅ የሚችል ኮድ</span> ላይ ያተኮረ ነው፣ ለምርት-ዝግጁ የኋላ-መጨረሻ መፍትሄዎች ለመስጠት።
+            </>
+        ),
         descriptionTargets: "በአሁኑ ጊዜ፣ የእኔ ትኩረት እንደ ፕሮግራመር ለመድገም አዲስ ስጋቶችን መፈለግ ላይ ነው። እውቀቴን ለማሻሻል ቁርጠኛ ነኝ፣ በተለይም በback-end፣ አዲስ መሳሪያዎችን ለመማር እና የፕሮግራሚንግ ክህሎቶቼን ለማሻሻል። በተጨማሪም፣ ከበለጠ ልምድ ያላቸው ሰዎች ለመማር እና በተጣጣሚ ዘዴዎች ውስጥ የተገኘውን እውቀት ለመተግበር እፈልጋለሁ፣ ሁልጊዜ ያለማቋርጥ ለመሻሻል ዓላማ።"
 
     }

@@ -1,8 +1,7 @@
 "use client";
 import { useLanguage } from "@/app/providers/LanguageContext";
-import { SiOracle, SiFirebase, SiMysql, SiFlutter, SiMongodb, SiPrisma, SiReact, SiNextdotjs, SiTailwindcss, SiDocker, SiTypescript, SiNodedotjs, SiDotnet, SiPython, SiUnity, SiPostgresql, SiStyledcomponents, SiAmazonwebservices, SiGit,  SiSass, SiExpo, SiZod, SiLinux, SiJavascript, SiExpress, SiJest,  SiVite,  } from "react-icons/si";
+import { SiOracle, SiFirebase, SiMysql, SiFlutter, SiMongodb, SiPrisma, SiReact, SiNextdotjs, SiTailwindcss, SiDocker, SiTypescript, SiNodedotjs, SiPython, SiUnity, SiPostgresql, SiStyledcomponents, SiAmazonwebservices, SiGit,  SiSass, SiExpo, SiZod, SiLinux, SiJavascript, SiExpress, SiJest,  SiVite, SiGo } from "react-icons/si";
 import { StackCard } from "./components/StackCard";
-import { CSharpIcon } from "./components/Icons/csharpIcon";
 import { VscAzureDevops } from "react-icons/vsc";
 
 
@@ -42,8 +41,8 @@ export function Stack() {
                         { icon: SiReact, name: "React" },
                         { icon: SiVite, name: "Vite" },
                         { icon: SiTailwindcss, name: "TailwindCSS" },
-                        { icon: CSharpIcon, name: "C#" },
-                        { icon: SiDotnet, name: "Dotnet" },
+                        { icon: SiGo, name: "Golang" },
+                        { icon: SiGo, name: "Go Micro" },
                         { icon: VscAzureDevops, name: "AzureDevOps" },
                         { icon: SiGit, name: "Git" },
 
@@ -57,28 +56,29 @@ export function Stack() {
                         { icon: SiStyledcomponents, name: "Style in Js" },
                         { icon: SiSass, name: "SASS" },
                         { icon: SiPython, name: "Python" },
-                        { icon: SiUnity, name: "Unity" },
-                        { icon: SiExpo, name: "Expo" },
                         { icon: SiFlutter, name: "Flutter" },
                         { icon: SiFirebase, name: "Firebase" },
                         { icon: SiMysql, name: "MySQL" },
                         { icon: SiMongodb, name: "MongoDB" },
-                        { icon: SiAmazonwebservices, name: "AWS" },
                         { icon: SiOracle, name: "Oracle" },
+                        { icon: SiNextdotjs, name: "Next JS 14" },
+                        { icon: SiPostgresql, name: "Postgresql" },
+                        { icon: SiPrisma, name: "Prisma" },
+                        { icon: SiZod, name: "Zod" },
+                        { icon: SiDocker, name: "Docker" },
                     ]} />
 
                     {/* Estou Estudando */}
 
                     <StackCard situation={translation[language].studying} technologies={[
-                        { icon: SiNextdotjs, name: "Next JS 14" },
                         { icon: SiNodedotjs, name: "Node JS" },
                         { icon: SiExpress, name: "Express JS" },
-                        { icon: SiPostgresql, name: "Postgresql" },
-                        { icon: SiPrisma, name: "Prisma" },
-                        { icon: SiZod, name: "Zod" },
                         { icon: SiJest, name: "Jest" },
                         { icon: SiLinux, name: "Linux/Wsl2" },
-                        { icon: SiDocker, name: "Docker" },
+                        { icon: SiUnity, name: "Unity" },
+                        { icon: SiAmazonwebservices, name: "AWS" },
+                        { icon: SiExpo, name: "Expo" },
+                        { icon: SiPython, name: "Agent Building" },
                     ]} />
                     
                 </div>

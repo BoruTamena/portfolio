@@ -1,11 +1,9 @@
-import DevControle from "@/assets/images/devcontrole.png";
-import DalyGames from "@/assets/images/dalyGames.jpg";
 import { SiGo, SiMongodb, SiRedis, SiDocker, SiNginx, SiPrometheus, SiGrafana } from "react-icons/si";
 export const ProjectsData = [
     {
         id: "goChat",
         index: 0,
-        src: DevControle, // Placeholder - replace with actual image
+        src: "/go-chat.png", // Add go-chat.png to public folder
         stack: [SiGo, SiMongodb, SiDocker],
         post: "",
         repository: "", // Add repository URL when available
@@ -34,7 +32,7 @@ Tasks Done:
     {
         id: "jobBoard",
         index: 1,
-        src: DalyGames, // Placeholder - replace with actual image
+        src: "/job-board.png", // Add job-board.png to public folder
         stack: [SiGo, SiMongodb, SiDocker],
         post: "",
         repository: "", // Add repository URL when available
@@ -75,7 +73,7 @@ Outcomes:
     {
         id: "urlShortener",
         index: 2,
-        src: DevControle, // Placeholder - replace with actual image
+        src: "/url-shortener.png", // Add url-shortener.png to public folder
         stack: [SiGo, SiMongodb, SiRedis, SiDocker, SiNginx, SiPrometheus, SiGrafana],
         post: "",
         repository: "", // Add repository URL when available
