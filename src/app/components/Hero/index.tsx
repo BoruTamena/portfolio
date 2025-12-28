@@ -114,8 +114,8 @@ export function Hero({ onDownloadClick }: HeroProps) {
               className="flex flex-wrap items-center justify-center gap-4 pt-6"
             >
               <a
-                href="cvSamuelBrito.pdf"
-                download="cvSamuelBrito.pdf"
+                href="/my-latest-cv.pdf"
+                download="Boru-Tamene-Resume.pdf"
                 className="group px-6 py-2.5 bg-[#22c55e] text-white font-medium rounded-lg
                   hover:bg-[#16a34a] transition-all duration-200 
                   shadow-md shadow-[#22c55e]/20 hover:shadow-[#22c55e]/30
